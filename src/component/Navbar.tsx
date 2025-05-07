@@ -5,12 +5,10 @@ import {
     Button,
     Container,
     IconButton,
+    Menu,
+    MenuItem,
     Toolbar,
     Typography,
-    Drawer,
-    List,
-    ListItem,
-    ListItemText,
 } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from "react-router-dom";
@@ -33,16 +31,25 @@ const menuItems = [
 ];
 
 const Navbar = () => {
-    const [openDrawer, setOpenDrawer] = useState(false);
+    const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+
+    const handleMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
+        setAnchorEl(event.currentTarget);
+    };
+
+    const handleMenuClose = () => {
+        setAnchorEl(null);
+    };
 
     return (
         <>
             <AppBar
-                position="absolute"
-                elevation={0}
+                position="fixed"
+                elevation={4}
                 sx={{
-                    backgroundColor: 'transparent',
-                    boxShadow: 'none',
+                    backgroundColor: 'rgba(37,36,36,0.4)',
+                    backdropFilter: 'blur(6px)',
+                    zIndex: (theme) => theme.zIndex.drawer + 1, // pastikan di atas semua
                 }}
             >
                 <Container>
@@ -77,28 +84,33 @@ const Navbar = () => {
                             ))}
                         </Box>
 
-                        {/* Mobile Menu Icon */}
+                        {/* Mobile Menu (Dropdown) */}
                         <Box sx={{ display: { xs: 'block', md: 'none' } }}>
-                            <IconButton onClick={() => setOpenDrawer(true)} sx={{ color: MuiColor.White }}>
+                            <IconButton onClick={handleMenuOpen} sx={{ color: MuiColor.Orange }}>
                                 <MenuIcon />
                             </IconButton>
+                            <Menu
+                                anchorEl={anchorEl}
+                                open={Boolean(anchorEl)}
+                                onClose={handleMenuClose}
+                                anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+                                transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+                            >
+                                {menuItems.map((item) => (
+                                    <MenuItem
+                                        key={item.to}
+                                        component={Link}
+                                        to={item.to}
+                                        onClick={handleMenuClose}
+                                    >
+                                        {item.label}
+                                    </MenuItem>
+                                ))}
+                            </Menu>
                         </Box>
                     </Toolbar>
                 </Container>
             </AppBar>
-
-            {/* Drawer for Mobile */}
-            <Drawer anchor="right" open={openDrawer} onClose={() => setOpenDrawer(false)}>
-                <Box sx={{ width: 250 }} onClick={() => setOpenDrawer(false)}>
-                    <List>
-                        {menuItems.map((item) => (
-                            <ListItem  key={item.to} component={Link} to={item.to}>
-                                <ListItemText primary={item.label} />
-                            </ListItem>
-                        ))}
-                    </List>
-                </Box>
-            </Drawer>
         </>
     );
 };

@@ -26,9 +26,10 @@ const Hero = () => (
             right: 0,
             bottom: 0,
             opacity: 0.3,
+            py: 10,
             background: "#000000",
             width: '100%',
-
+            height: "70vh",
         }}>
 
         </Box>
@@ -44,8 +45,9 @@ const Hero = () => (
             }}>
                 <Box sx={{ position: 'relative', zIndex: 1, textAlign: { xs: 'center', md: 'left' } }}>
                     <Typography sx={{
-                        fontSize: {xs: 25, md: 70},
+                        fontSize: {xs: 25, md: 30},
                         color: MuiColor.Orange,
+                        fontWeight: 700,
                         fontFamily: "Arizonia, cursive",
                     }}>
                         Welcome to Muslim Traveller
@@ -64,6 +66,7 @@ const Hero = () => (
                     }}>
                         Travel to the any corner of the world, without going around in circles
                     </Typography>
+
                 </Box>
                 <Box alignSelf={{ xs: 'center', md: 'center' }} margin={5}>
                     <IconButton
