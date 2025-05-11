@@ -10,12 +10,28 @@ import LocalPhoneOutlinedIcon from '@mui/icons-material/LocalPhoneOutlined';
 import LocalPostOfficeIcon from '@mui/icons-material/LocalPostOffice';
 
 const Footer = () => (
-    <Box pb={20} sx={{ backgroundImage: `url(${background_1})`, backgroundSize: "cover", height: '70vh', color: MuiColor.White }}>
+    <Box
+        sx={{
+            backgroundImage: `url(${background_1})`,
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center",
+            color: MuiColor.White,
+            py: { xs: 10, md: 20 },
+        }}
+    >
         <Container>
-            <Box pt={20} sx={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between', gap: 4 }}>
-
+            <Box
+                sx={{
+                    display: "flex",
+                    flexDirection: { xs: "column", md: "row" },
+                    flexWrap: "wrap",
+                    justifyContent: "space-between",
+                    gap: 4,
+                }}
+            >
                 {/* About Section */}
-                <Box maxWidth={250}>
+                <Box sx={{ flex: '1 1 250px' }}>
                     <Typography fontWeight={800} variant="h5" color={MuiColor.Black}>About</Typography>
                     <Typography mt={2} variant="body2" fontWeight={300} color="textSecondary">
                         Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
@@ -44,7 +60,7 @@ const Footer = () => (
                 </Box>
 
                 {/* Information Section */}
-                <Box maxWidth={200}>
+                <Box sx={{ flex: '1 1 200px' }}>
                     <Typography fontWeight={800} variant="h5" color={MuiColor.Black}>Information</Typography>
                     <Box mt={2}>
                         {[
@@ -63,7 +79,7 @@ const Footer = () => (
                 </Box>
 
                 {/* Experience Section */}
-                <Box maxWidth={200}>
+                <Box sx={{ flex: '1 1 200px' }}>
                     <Typography fontWeight={800} variant="h5" color={MuiColor.Black}>Experience</Typography>
                     <Box mt={2}>
                         {[
@@ -82,7 +98,7 @@ const Footer = () => (
                 </Box>
 
                 {/* Contact Section */}
-                <Box maxWidth={300}>
+                <Box sx={{ flex: '1 1 300px' }}>
                     <Typography fontWeight={800} variant="h5" color={MuiColor.Black}>Have a question</Typography>
                     <Box mt={2} sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
                         <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 1 }}>
@@ -92,7 +108,7 @@ const Footer = () => (
                             </Typography>
                         </Box>
                         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                            <LocalPhoneOutlinedIcon sx={{ color: MuiColor.Orange }}/>
+                            <LocalPhoneOutlinedIcon sx={{ color: MuiColor.Orange }} />
                             <Typography variant="body2" fontWeight={300} color="textSecondary">
                                 +2 392 3929 210
                             </Typography>
@@ -105,7 +121,6 @@ const Footer = () => (
                         </Box>
                     </Box>
                 </Box>
-
             </Box>
         </Container>
     </Box>

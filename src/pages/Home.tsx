@@ -1,147 +1,199 @@
 import React from 'react';
 import {
     Box,
-    Button,
-    Card,
-    CardActionArea,
-    CardContent,
-    CardMedia,
     Container,
     Grid,
-    Typography
 } from "@mui/material";
-import { MuiColor } from "../styles/enum";
 import services1 from "../assets/image/services-1.jpg";
-import services2 from "../assets/image/services-2.jpg";
-import services3 from "../assets/image/services-3.jpg";
-import services4 from "../assets/image/services-4.jpg";
+import bg_1 from "../assets/image/bg_1.jpg";
 import background_1 from "../assets/image/background_1.png";
 import "../styles/listDetinatiom.css";
-import CardGrid from "../component/CardGrid/CardGrid";
-import data from "../data/dummy.json";
-import TestimonialCard from "../component/TestimonialCard";
 import TourCard from "../component/TourCard";
+import Hero from "../component/Hero";
+import About from "./About";
+import TitleAndSubtitle from "../component/TitleAndSubtitle";
 import CountryCard from "../component/CountryCard";
+import FeedbackTourism from "../component/Home/FeedbackTourism";
 
-const testimonials = [
+const touristData =  [
     {
-        text: 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
-        name: 'Roger Scott',
-        role: 'Marketing Manager',
-        image: 'https://i.pravatar.cc/150?img=32',
+        "city": "Kuala Lumpur",
+        "places": [
+            {
+                "name": "Petronas Twin Towers",
+                "description": "Iconic twin skyscrapers and symbol of Malaysia.",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Petronas_Panorama_II.jpg"
+            },
+            {
+                "name": "Batu Caves",
+                "description": "Sacred Hindu site with a giant Murugan statue and limestone caves.",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Batu_Caves_entrance.jpg"
+            },
+            {
+                "name": "Bukit Bintang",
+                "description": "Shopping, dining, and entertainment district.",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Bukit_Bintang_Kuala_Lumpur_Malaysia.jpg"
+            },
+            {
+                "name": "KL Tower (Menara KL)",
+                "description": "Observation tower with panoramic city views.",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Menara_KL_Tower.jpg"
+            }
+        ]
     },
     {
-        text: 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
-        name: 'Roger Scott',
-        role: 'Marketing Manager',
-        image: 'https://i.pravatar.cc/150?img=47',
+        "city": "Langkawi",
+        "places": [
+            {
+                "name": "Pantai Cenang",
+                "description": "Popular beach with restaurants and bars.",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/5/55/Pantai_Cenang_Langkawi.jpg"
+            },
+            {
+                "name": "Langkawi Sky Bridge",
+                "description": "Curved pedestrian bridge above the mountains.",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Langkawi_Sky_Bridge.jpg"
+            },
+            {
+                "name": "Langkawi Cable Car",
+                "description": "Scenic ride to the peak of Gunung Mat Cincang.",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/5/55/Langkawi_Cable_Car.jpg"
+            },
+            {
+                "name": "Underwater World",
+                "description": "Aquarium with diverse marine life and exhibits.",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/0/02/Underwater_World_Langkawi.jpg"
+            }
+        ]
     },
     {
-        text: 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
-        name: 'Roger Scott',
-        role: 'Marketing Manager',
-        image: 'https://i.pravatar.cc/150?img=11',
+        "city": "Cameron Highlands",
+        "places": [
+            {
+                "name": "Boh Tea Plantation",
+                "description": "Largest tea plantation in Malaysia.",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Boh_Tea_Cameron_Highlands.jpg"
+            },
+            {
+                "name": "Mossy Forest",
+                "description": "Unique cloud forest with misty trails.",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Mossy_Forest_Cameron.jpg"
+            },
+            {
+                "name": "Strawberry Farms",
+                "description": "Pick-your-own fresh strawberries experience.",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Cameron_Strawberry_Farm.jpg"
+            }
+        ]
     },
-];
+    {
+        "city": "Genting Highlands",
+        "places": [
+            {
+                "name": "Resorts World Genting",
+                "description": "Integrated resort with casino and theme park.",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Resorts_World_Genting.jpg"
+            },
+            {
+                "name": "Skytropolis Indoor Theme Park",
+                "description": "Indoor amusement park for all ages.",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Skytropolis_Genting.jpg"
+            },
+            {
+                "name": "Genting Premium Outlets",
+                "description": "Luxury brand shopping outlet.",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Genting_Premium_Outlets.jpg"
+            }
+        ]
+    },
+    {
+        "city": "Penang",
+        "places": [
+            {
+                "name": "George Town",
+                "description": "UNESCO heritage city known for street art and food.",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/f/f3/George_Town_Penang.jpg"
+            },
+            {
+                "name": "Penang Hill",
+                "description": "Hilltop with panoramic views and temples.",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Penang_Hill_Railway.jpg"
+            },
+            {
+                "name": "Gurney Drive",
+                "description": "Seaside promenade famous for street food.",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Gurney_Drive_Penang.jpg"
+            }
+        ]
+    },
+    {
+        "city": "Melaka",
+        "places": [
+            {
+                "name": "Jonker Street",
+                "description": "Vibrant night market with souvenirs and food.",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/3/34/Jonker_Street_Melaka.jpg"
+            },
+            {
+                "name": "Dutch Square",
+                "description": "Historic red buildings from colonial era.",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Dutch_Square_Melaka.jpg"
+            },
+            {
+                "name": "Melaka River Cruise",
+                "description": "Scenic boat ride through heritage town.",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Melaka_River_Cruise.jpg"
+            }
+        ]
+    },
+    {
+        "city": "Perhentian Islands",
+        "places": [
+            {
+                "name": "Perhentian Besar & Kecil",
+                "description": "Famous islands for snorkeling and diving.",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/f/f5/Perhentian_Islands.jpg"
+            }
+        ]
+    },
+    {
+        "city": "Port Dickson",
+        "places": [
+            {
+                "name": "Port Dickson Beach",
+                "description": "Family-friendly beach near Kuala Lumpur.",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Port_Dickson_Beach.jpg"
+            }
+        ]
+    }
+]
 
 const Home = () => (
-    <Box mt={9}>
-        <Container>
-            <Grid container spacing={2}>
-                <Grid size={{xs:12, md:7}} container>
-                    {[services1, services2, services3, services4].map((img, index) => (
-                        <Grid size={{xs:12, md:6}} key={index}>
-                            <Card>
-                                <CardActionArea>
-                                    <CardMedia
-                                        component="img"
-                                        height="140"
-                                        image={img}
-                                        alt={`service-${index}`}
-                                    />
-                                    <CardContent sx={{ height: 140 }}>
-                                        <Typography gutterBottom variant="h5">
-                                            {['Activities', 'Travel Arrangements', 'Private Guide', 'Location Manager'][index]}
-                                        </Typography>
-                                        <Typography variant="body2" color="text.secondary">
-                                            A small river named Duden flows by their place and supplies it with the necessary
-                                        </Typography>
-                                    </CardContent>
-                                </CardActionArea>
-                            </Card>
-                        </Grid>
-                    ))}
-                </Grid>
-
-                <Grid size={{xs:12, md:5}}>
-                    <Typography sx={{
-                        fontSize: { xs: 25, md: 30 },
-                        color: MuiColor.Orange,
-                        fontWeight: 700,
-                        fontFamily: "Arizonia, cursive",
-                    }}>
-                        Welcome to Muslim Traveller
-                    </Typography>
-
-                    <Typography variant="h1" sx={{
-                        fontSize: { xs: 30, md: 50 },
-                        lineHeight: 1.2,
-                        fontWeight: 700,
-                    }}>
-                        It's time to start your adventure
-                    </Typography>
-
-                    <Typography variant="body1" sx={{ fontSize: 16 }}>
-                        A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
-                    </Typography>
-
-                    <Button size="large" variant="contained" sx={{ bgcolor: MuiColor.Orange, mt: 5 }}>
-                        Search Destination
-                    </Button>
-                </Grid>
-            </Grid>
+    <Box>
+        <Hero/>
+        <Container sx={{marginTop:10}}>
+            <About/>
         </Container>
 
-        <Box mt={10} pb={20} sx={{ backgroundImage: `url(${background_1})`, backgroundSize: "cover" }}>
-            <Container>
-                <Box pt={10} textAlign="center">
-                    <Typography sx={{
-                        fontSize: { xs: 25, md: 30 },
-                        color: MuiColor.Orange,
-                        fontWeight: 700,
-                        fontFamily: "Arizonia, cursive",
-                    }}>
-                        Pacific Provide Places
-                    </Typography>
-                    <Typography variant="h1" sx={{ fontSize: { xs: 25, md: 50 }, fontWeight: 700 }}>
-                        Select Your Destination
-                    </Typography>
-                </Box>
 
-                <Grid mt={5} container spacing={2}>
-                    <Grid size={{xs:12, md:4, sm:3}}>
-                        <CountryCard image={services1} country="Philippines" tourCount={8} />
-                    </Grid>
+        <Box pb={10} sx={{ backgroundImage: `url(${background_1})`, backgroundSize: "cover" }}>
+            <TitleAndSubtitle title={'Welcome To Malaysia'} subtitle={'Select Your Destination'}/>
+            <Container>
+                <Grid container spacing={2}>
+                    {touristData.map((city, cityIndex) => (
+                        <Grid size={{xs:12, md:3, sm:3}} key={cityIndex}>
+                            <CountryCard image={'https://picsum.photos/536/354'} country={city.city} tourCount={city.places.length} />
+                        </Grid>
+                    ))}
                 </Grid>
             </Container>
         </Box>
 
+
         <Box mt={10} pb={20}>
+            <TitleAndSubtitle title={'Destination'} subtitle={'Tour Destination'}/>
             <Container>
                 <Box p={2} textAlign="center">
-                    <Typography sx={{
-                        fontSize: { xs: 25, md: 30 },
-                        color: MuiColor.Orange,
-                        fontWeight: 700,
-                        fontFamily: "Arizonia, cursive",
-                    }}>
-                        Destination
-                    </Typography>
-
-                    <Typography variant="h1" sx={{ fontSize: { xs: 25, md: 50 }, fontWeight: 700 }}>
-                        Tour Destination
-                    </Typography>
-
                     <Grid container spacing={2}>
                         <Grid size={{xs:12, md:4, sm:6}}>
                             <TourCard
@@ -160,99 +212,54 @@ const Home = () => (
             </Container>
         </Box>
 
-        <Container>
-            <Box mt={5} pb={20}>
-                <Box p={2} textAlign="center">
-                    <Typography sx={{
-                        fontSize: { xs: 25, md: 30 },
-                        color: MuiColor.Orange,
-                        fontWeight: 700,
-                        fontFamily: "Arizonia, cursive",
-                    }}>
-                        Testimonial
-                    </Typography>
 
-                    <Typography variant="h1" sx={{ fontSize: { xs: 25, md: 50 }, fontWeight: 700 }}>
-                        Tourist Feedback
-                    </Typography>
-                </Box>
-
-                <Box sx={{ backgroundImage: `url('/your/background/image.jpg')`, py: 10, px: 4 }}>
-                    <Grid container spacing={4} justifyContent="center">
-                        {testimonials.map((item, idx) => (
-                            <Grid size={{xs:12, md:4}} key={idx}>
-                                <TestimonialCard {...item} />
-                            </Grid>
-                        ))}
-                    </Grid>
-                </Box>
+        <Box sx={{ backgroundImage: `url(${bg_1})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            color: "#fff",
+            position: "inherit",
+            py:10,
+            backgroundRepeat: "no-repeat",
+            backgroundAttachment: "fixed"}}>
+            <Container>
+                <TitleAndSubtitle title={'Testimonial'} subtitle={'Tourist Feedback'}/>
+                <FeedbackTourism/>
+            </Container>
+        </Box>
 
 
 
-            </Box>
-        </Container>
-
-
-        <Container>
-            <Box mt={5}>
-                <Box p={2} textAlign="center">
-                    <Typography sx={{
-                        fontSize: { xs: 25, md: 30 },
-                        color: MuiColor.Orange,
-                        fontWeight: 700,
-                        fontFamily: "Arizonia, cursive",
-                    }}>
-                        Our Blog
-                    </Typography>
-
-                    <Typography variant="h1" sx={{ fontSize: { xs: 25, md: 50 }, fontWeight: 700 }}>
-                        Recent Post
-                    </Typography>
-                </Box>
-
-
-                <Box sx={{ backgroundImage: `url('/your/background/image.jpg')`, py: 10, px: 4 }}>
-                    <Grid container spacing={4} justifyContent="center">
-                        {testimonials.map((item, idx) => (
-                            <Grid size={{xs:12, md:4}} key={idx}>
-                                <TourCard
-                                    image="https://picsum.photos/536/354"
-                                    price="550"
-                                    days={8}
-                                    title="Banaue Rice Terraces"
-                                    location="Banaue, Ifugao, Philippines"
-                                    baths={2}
-                                    beds={3}
-                                    label="Near Mountain"
-                                />
-                            </Grid>
-                        ))}
-                    </Grid>
-                </Box>
-
-            </Box>
-        </Container>
-
-        <Container>
-            <Box my={5} sx={{ backgroundImage: `url(${services1})`, backgroundSize: "cover" }}>
-                <Box p={2} textAlign="center">
-                    <Typography sx={{
-                        fontSize: { xs: 25, md: 30 },
-                        color: MuiColor.Orange,
-                        fontWeight: 700,
-                        fontFamily: "Arizonia, cursive",
-                    }}>
-                        We Are Pacific A Muslim Traveller
-                    </Typography>
-
-                    <Typography variant="h5" sx={{ fontWeight: 100 }}>
-                        We can manage your dream building A small river named Duden flows by their place
-                    </Typography>
-
-                    <Button size="large" variant="contained" sx={{marginY: 5, bgcolor: MuiColor.Orange}}>Ask For A Qoute</Button>
-                </Box>
-            </Box>
-        </Container>
+        {/*<Container sx={{ py: 4 }}>*/}
+        {/*    {touristData.map((city, cityIndex) => (*/}
+        {/*        <div key={cityIndex}>*/}
+        {/*            <Typography variant="h4" gutterBottom>*/}
+        {/*                {city.city}*/}
+        {/*            </Typography>*/}
+        {/*            <Grid container spacing={4}>*/}
+        {/*                {city.places.map((place, index) => (*/}
+        {/*                    <Grid size={{xs:12, sm:6, md:4}} key={index}>*/}
+        {/*                        <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>*/}
+        {/*                            <CardMedia*/}
+        {/*                                component="img"*/}
+        {/*                                image={place.image}*/}
+        {/*                                alt={place.name}*/}
+        {/*                                height="200"*/}
+        {/*                            />*/}
+        {/*                            <CardContent>*/}
+        {/*                                <Typography variant="h6" gutterBottom>*/}
+        {/*                                    {place.name}*/}
+        {/*                                </Typography>*/}
+        {/*                                <Typography variant="body2" color="text.secondary">*/}
+        {/*                                    {place.description}*/}
+        {/*                                </Typography>*/}
+        {/*                            </CardContent>*/}
+        {/*                        </Card>*/}
+        {/*                    </Grid>*/}
+        {/*                ))}*/}
+        {/*            </Grid>*/}
+        {/*        </div>*/}
+        {/*    ))}*/}
+        {/*</Container>*/}
 
     </Box>
 );

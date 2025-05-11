@@ -24,7 +24,7 @@ export const menuStyle = {
 const menuItems = [
     { label: "Home", to: "/" },
     { label: "About", to: "/about" },
-    { label: "Destination", to: "/destination" },
+    { label: "Transportation", to: "/transportation" },
     { label: "Hotel", to: "/hotel" },
     { label: "Blog", to: "/blog" },
     { label: "Contact", to: "/contact" },
