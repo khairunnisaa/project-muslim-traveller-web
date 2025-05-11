@@ -9,13 +9,14 @@ import Hero from "./component/Hero";
 import About from "./pages/About";
 import Blog from "./pages/Blog";
 import {Container} from "@mui/material";
+import Footer from "./component/Footer";
 
 function App() {
   return (
       <>
           <Navbar />
           <Hero />
-          <Container>
+
 
               <Routes>
                   <Route path="/" element={<Home />} />
@@ -25,7 +26,8 @@ function App() {
                   <Route path="/blog" element={<Blog />} />
                   <Route path="/contact" element={<Contact />} />
               </Routes>
-          </Container>
+
+          <Footer/>
       </>
   );
 }
