@@ -1,14 +1,29 @@
 {
   "files": {
-    "main.css": "/project-muslim-traveller-web/static/css/main.5df1e42d.css",
-    "main.js": "/project-muslim-traveller-web/static/js/main.e87b3bdb.js",
-    "static/media/img.png": "/project-muslim-traveller-web/static/media/img.bc46faa2d9a7f9684aae.png",
+    "main.css": "/project-muslim-traveller-web/static/css/main.5d2622b5.css",
+    "main.js": "/project-muslim-traveller-web/static/js/main.9bc066c4.js",
+    "static/media/kuala-lumpur.png": "/project-muslim-traveller-web/static/media/kuala-lumpur.a64017bbd13edaa67c7f.png",
     "static/media/bg_1.jpg": "/project-muslim-traveller-web/static/media/bg_1.b424b2f1e78835cc0636.jpg",
+    "static/media/penang.png": "/project-muslim-traveller-web/static/media/penang.5061e9b42a00d16d330e.png",
+    "static/media/johor.png": "/project-muslim-traveller-web/static/media/johor.ec27f2f6ff933b3cb903.png",
+    "static/media/pahang.png": "/project-muslim-traveller-web/static/media/pahang.9b7e3d255f7ae7680057.png",
+    "static/media/terengganu.png": "/project-muslim-traveller-web/static/media/terengganu.0916431eb1a41ad5e0cd.png",
     "static/media/background_1.png": "/project-muslim-traveller-web/static/media/background_1.21414980eb80fddb658d.png",
+    "static/media/putrajaya.png": "/project-muslim-traveller-web/static/media/putrajaya.91d408feed54763db050.png",
     "static/media/services-2.jpg": "/project-muslim-traveller-web/static/media/services-2.01eb27156748587dcad3.jpg",
     "static/media/services-4.jpg": "/project-muslim-traveller-web/static/media/services-4.43b3b72b1c73c16de046.jpg",
     "static/media/services-1.jpg": "/project-muslim-traveller-web/static/media/services-1.ee50e9e4598eb4f30d04.jpg",
+    "static/media/selangor.jpg": "/project-muslim-traveller-web/static/media/selangor.9cdbcef15757ddf2349e.jpg",
+    "static/media/malaka.png": "/project-muslim-traveller-web/static/media/malaka.05d98a60638f7f006d91.png",
+    "static/media/serawak.png": "/project-muslim-traveller-web/static/media/serawak.a78a8e92602c6971e267.png",
+    "static/media/kelantan.png": "/project-muslim-traveller-web/static/media/kelantan.94e4bf5a9aa40c5e4a21.png",
+    "static/media/sabah.png": "/project-muslim-traveller-web/static/media/sabah.8d1450b56f160337bc29.png",
+    "static/media/perak.png": "/project-muslim-traveller-web/static/media/perak.725102a01d15ebc6ea4e.png",
+    "static/media/kedah.png": "/project-muslim-traveller-web/static/media/kedah.71588f392b34042c0902.png",
+    "static/media/perlis.png": "/project-muslim-traveller-web/static/media/perlis.9c91361b8bdf8971fe65.png",
+    "static/media/labuhan.png": "/project-muslim-traveller-web/static/media/labuhan.5258280262e52a76297d.png",
     "static/media/services-3.jpg": "/project-muslim-traveller-web/static/media/services-3.b4bf6412fe84b12dcd6c.jpg",
+    "static/media/negerisembilan.png": "/project-muslim-traveller-web/static/media/negerisembilan.c7189059d299fe5878c3.png",
     "static/media/roboto-latin-700-normal.woff2": "/project-muslim-traveller-web/static/media/roboto-latin-700-normal.c4d6cab43bec89049809.woff2",
     "static/media/roboto-latin-500-normal.woff2": "/project-muslim-traveller-web/static/media/roboto-latin-500-normal.599f66a60bdf974e578e.woff2",
     "static/media/roboto-latin-300-normal.woff2": "/project-muslim-traveller-web/static/media/roboto-latin-300-normal.db56943a88e4852343ae.woff2",
@@ -77,16 +92,20 @@
     "static/media/roboto-greek-ext-400-normal.woff2": "/project-muslim-traveller-web/static/media/roboto-greek-ext-400-normal.2d5875b032a1cca91eb2.woff2",
     "static/media/roboto-greek-ext-700-normal.woff2": "/project-muslim-traveller-web/static/media/roboto-greek-ext-700-normal.eb28a447335ba6d54fcb.woff2",
     "static/media/roboto-greek-ext-300-normal.woff2": "/project-muslim-traveller-web/static/media/roboto-greek-ext-300-normal.a88b77bb10633a8045e3.woff2",
+    "static/media/slick.svg": "/project-muslim-traveller-web/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/project-muslim-traveller-web/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/project-muslim-traveller-web/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/roboto-greek-ext-400-normal.woff": "/project-muslim-traveller-web/static/media/roboto-greek-ext-400-normal.a0baf7d6726d8f751a27.woff",
     "static/media/roboto-greek-ext-700-normal.woff": "/project-muslim-traveller-web/static/media/roboto-greek-ext-700-normal.1aff9f4cd71608489b9a.woff",
     "static/media/roboto-greek-ext-500-normal.woff": "/project-muslim-traveller-web/static/media/roboto-greek-ext-500-normal.1964239c2800b6bd7e39.woff",
     "static/media/roboto-greek-ext-300-normal.woff": "/project-muslim-traveller-web/static/media/roboto-greek-ext-300-normal.60729cafbded24073dfb.woff",
+    "static/media/slick.woff": "/project-muslim-traveller-web/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/project-muslim-traveller-web/index.html",
-    "main.5df1e42d.css.map": "/project-muslim-traveller-web/static/css/main.5df1e42d.css.map",
-    "main.e87b3bdb.js.map": "/project-muslim-traveller-web/static/js/main.e87b3bdb.js.map"
+    "main.5d2622b5.css.map": "/project-muslim-traveller-web/static/css/main.5d2622b5.css.map",
+    "main.9bc066c4.js.map": "/project-muslim-traveller-web/static/js/main.9bc066c4.js.map"
   },
   "entrypoints": [
-    "static/css/main.5df1e42d.css",
-    "static/js/main.e87b3bdb.js"
+    "static/css/main.5d2622b5.css",
+    "static/js/main.9bc066c4.js"
   ]
 }
