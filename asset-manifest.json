@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/project-muslim-traveller-web/static/css/main.5df1e42d.css",
-    "main.js": "/project-muslim-traveller-web/static/js/main.9587b614.js",
+    "main.js": "/project-muslim-traveller-web/static/js/main.e87b3bdb.js",
     "static/media/img.png": "/project-muslim-traveller-web/static/media/img.bc46faa2d9a7f9684aae.png",
     "static/media/bg_1.jpg": "/project-muslim-traveller-web/static/media/bg_1.b424b2f1e78835cc0636.jpg",
     "static/media/background_1.png": "/project-muslim-traveller-web/static/media/background_1.21414980eb80fddb658d.png",
@@ -83,10 +83,10 @@
     "static/media/roboto-greek-ext-300-normal.woff": "/project-muslim-traveller-web/static/media/roboto-greek-ext-300-normal.60729cafbded24073dfb.woff",
     "index.html": "/project-muslim-traveller-web/index.html",
     "main.5df1e42d.css.map": "/project-muslim-traveller-web/static/css/main.5df1e42d.css.map",
-    "main.9587b614.js.map": "/project-muslim-traveller-web/static/js/main.9587b614.js.map"
+    "main.e87b3bdb.js.map": "/project-muslim-traveller-web/static/js/main.e87b3bdb.js.map"
   },
   "entrypoints": [
     "static/css/main.5df1e42d.css",
-    "static/js/main.9587b614.js"
+    "static/js/main.e87b3bdb.js"
   ]
 }
