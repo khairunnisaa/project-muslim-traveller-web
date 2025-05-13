@@ -10,7 +10,7 @@ import {
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import { MuiColor } from '../styles/enum';
 
-const videoFile = "/video/visit_malaysia.mp4";
+const videoFile = `${process.env.PUBLIC_URL}/video/visit_malaysia.mp4`;
 const Hero = () => {
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
