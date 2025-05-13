@@ -4,7 +4,6 @@ import {Routes, Route} from "react-router-dom";
 import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import Navbar from "./component/Navbar";
-import Hero from "./component/Hero";
 import About from "./pages/About";
 import Blog from "./pages/Blog";
 import Footer from "./component/Footer";
@@ -23,7 +22,6 @@ function App() {
                   <Route path="/blog" element={<Blog />} />
                   <Route path="/contact" element={<Contact />} />
               </Routes>
-
           <Footer/>
       </>
   );
