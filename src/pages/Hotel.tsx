@@ -1,8 +1,7 @@
 import React from 'react';
-import {Box, Container, Grid, Typography} from "@mui/material";
+import {Box, Container, Grid} from "@mui/material";
 import TitleAndSubtitle from "../component/TitleAndSubtitle";
-import {MuiColor} from "../styles/enum";
-import TourCard from "../component/TourCard";
+
 
 const blog = [
     {
@@ -25,29 +24,26 @@ const blog = [
     },
 ];
 const Hotel = () => (
-    <Box>
+    <Container sx={{ marginTop: {xs:20, sm:10, md:10} }}>
         <TitleAndSubtitle title={'Hotel'} subtitle={'Select Your Hotel'}/>
-        <Container>
-            <Box sx={{ backgroundImage: `url('/your/background/image.jpg')`, px:4, py:4 }}>
-                <Grid container spacing={4} justifyContent="center">
-                    {blog.map((item, idx) => (
-                        <Grid size={{xs:12, md:4}} key={idx}>
-                            <TourCard
-                                image="https://picsum.photos/536/354"
-                                price="550"
-                                days={8}
-                                title="Banaue Rice Terraces"
-                                location="Banaue, Ifugao, Philippines"
-                                baths={2}
-                                beds={3}
-                                label="Near Mountain"
-                            />
-                        </Grid>
-                    ))}
-                </Grid>
-            </Box>
-        </Container>
-    </Box>
+        <Box sx={{ backgroundImage: `url('/your/background/image.jpg')`, px:4, py:4 }}>
+            <Grid container spacing={4} justifyContent="center">
+                {blog.map((item, idx) => (
+                    <Grid size={{xs:12, md:4}} key={idx}>
+                        {/*<TourCard*/}
+                        {/*    image="https://picsum.photos/536/354"*/}
+                        {/*    days={8}*/}
+                        {/*    title="Banaue Rice Terraces"*/}
+                        {/*    location="Banaue, Ifugao, Philippines"*/}
+                        {/*    baths={2}*/}
+                        {/*    beds={3}*/}
+                        {/*    label="Near Mountain"*/}
+                        {/*/>*/}
+                    </Grid>
+                ))}
+            </Grid>
+        </Box>
+    </Container>
 );
 
 export default Hotel;

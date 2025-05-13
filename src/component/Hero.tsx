@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import image from "../assets/image/img.png";
+import image from "../assets/image/kuala-lumpur.png";
 import {
     Box,
-    Container,
     IconButton,
     Typography,
     Modal,
@@ -11,24 +10,22 @@ import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import { MuiColor } from '../styles/enum';
 
 const videoFile = `${process.env.PUBLIC_URL}/video/visit_malaysia.mp4`;
+
 const Hero = () => {
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
-
     return (
         <>
-            <Box
-                className="hero-wrap"
+            <Box className="hero-wrap"
                 sx={{
+                    position: "relative",
+                    overflow: "hidden",
                     backgroundImage: `url(${image})`,
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                     color: "#fff",
-                    py: 10,
-                    width: "100%",
                     height: "100vh",
-                    position: "inherit",
                     backgroundRepeat: "no-repeat",
                     backgroundAttachment: "fixed",
                 }}
@@ -42,82 +39,82 @@ const Hero = () => {
                         right: 0,
                         bottom: 0,
                         opacity: 0.3,
-                        py: 10,
                         background: "#000000",
                         width: "100%",
                         height: "100vh",
                     }}
                 />
-                <Container sx={{ marginTop: 20 }}>
+
+                <Box
+                    sx={{
+                        marginY: {xs: 20, sm: 8, md: 30},
+                        marginX: {xs: 5, sm: 8, md: 20},
+                        display: "flex",
+                        justifyContent: "space-between",
+                        flexDirection: { xs: "column", md: "row" },
+                        alignItems: "center",
+                        gap: 4,
+                    }}
+                >
                     <Box
                         sx={{
-                            display: "flex",
-                            justifyContent: "space-between",
-                            flexDirection: { xs: "column", md: "row" },
-                            alignItems: "center",
-                            gap: 4,
+                            position: "relative",
+                            zIndex: 1,
+                            textAlign: { xs: "center", md: "left" },
                         }}
                     >
-                        <Box
+                        <Typography
                             sx={{
-                                position: "relative",
-                                zIndex: 1,
-                                textAlign: { xs: "center", md: "left" },
+                                fontSize: { xs: 25, md: 30 },
+                                color: MuiColor.Orange,
+                                fontWeight: 700,
+                                fontFamily: "Arizonia, cursive",
                             }}
                         >
-                            <Typography
-                                sx={{
-                                    fontSize: { xs: 25, md: 30 },
-                                    color: MuiColor.Orange,
-                                    fontWeight: 700,
-                                    fontFamily: "Arizonia, cursive",
-                                }}
-                            >
-                                Welcome to Muslim Traveller
-                            </Typography>
-                            <Typography
-                                variant="h1"
-                                sx={{
-                                    fontSize: { xs: 30, md: 70 },
-                                    color: MuiColor.White,
-                                    lineHeight: 1.2,
-                                    fontWeight: 700,
-                                }}
-                            >
-                                Discover Your Favorite <br /> Place with Us
-                            </Typography>
-                            <Typography
-                                variant="caption"
-                                component="p"
-                                sx={{
-                                    fontWeight: 400,
-                                    fontSize: "16px",
-                                }}
-                            >
-                                Travel to the any corner of the world, without going around in circles
-                            </Typography>
-                        </Box>
-
-                        <Box alignSelf="center" margin={5}>
-                            <IconButton
-                                onClick={handleOpen}
-                                sx={{
-                                    color: MuiColor.Orange,
-                                    backgroundColor: MuiColor.White,
-                                    width: 70,
-                                    height: 70,
-                                    borderRadius: "50%",
-                                    boxShadow: 3,
-                                    "&:hover": {
-                                        backgroundColor: MuiColor.White,
-                                    },
-                                }}
-                            >
-                                <PlayArrowIcon fontSize="large" />
-                            </IconButton>
-                        </Box>
+                            Welcome to Muslim Traveller
+                        </Typography>
+                        <Typography
+                            variant="h1"
+                            sx={{
+                                fontSize: { xs: 30, md: 70 },
+                                color: MuiColor.White,
+                                lineHeight: 1.2,
+                                fontWeight: 700,
+                            }}
+                        >
+                            Discover Your Favorite <br /> Place with Us
+                        </Typography>
+                        <Typography
+                            variant="caption"
+                            component="p"
+                            sx={{
+                                fontWeight: 400,
+                                fontSize: "16px",
+                            }}
+                        >
+                            Travel to the any corner of the world, without going around in circles
+                        </Typography>
                     </Box>
-                </Container>
+
+                    <Box alignSelf="center" margin={5}>
+                        <IconButton
+                            onClick={handleOpen}
+                            sx={{
+                                color: MuiColor.Orange,
+                                backgroundColor: MuiColor.White,
+                                width: 70,
+                                height: 70,
+                                borderRadius: "50%",
+                                boxShadow: 3,
+                                "&:hover": {
+                                    backgroundColor: MuiColor.White,
+                                },
+                            }}
+                        >
+                            <PlayArrowIcon fontSize="large" />
+                        </IconButton>
+                    </Box>
+                </Box>
             </Box>
 
             {/* Modal with Video */}

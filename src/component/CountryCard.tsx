@@ -1,22 +1,33 @@
-import React from 'react';
-import { Box, Typography, Card, CardMedia } from '@mui/material';
+import React, { useState } from 'react';
+import { Box, Card, CardMedia, Skeleton } from '@mui/material';
+import { MuiColor } from '../styles/enum';
 
 interface CountryCardProps {
-    image: string;
+    id: number,
+    image: any;
     country: string;
     tourCount: number;
+    onDestinationClick: (id: number) => void;
 }
 
-const CountryCard: React.FC<CountryCardProps> = ({ image, country, tourCount }) => {
+
+
+const CountryCard: React.FC<CountryCardProps> = ({onDestinationClick,id, image, country, tourCount }) => {
+    const [loaded, setLoaded] = useState(false);
+
     return (
-        <Card
+        <Card onClick={() => onDestinationClick(id)}
             sx={{
                 position: 'relative',
                 borderRadius: 2,
                 overflow: 'hidden',
-                width: 280,
-                height: 350,
                 boxShadow: 3,
+                transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                '&:hover': {
+                    transform: 'scale(1.03)',
+                    boxShadow: 6,
+                    cursor: 'pointer',
+                },
             }}
         >
             {/* Top-left country label */}
@@ -25,13 +36,13 @@ const CountryCard: React.FC<CountryCardProps> = ({ image, country, tourCount }) 
                     position: 'absolute',
                     top: 0,
                     left: 0,
-                    backgroundColor: '#ea6a2b',
+                    backgroundColor: MuiColor.Orange,
                     color: 'white',
                     px: 2,
                     py: 0.5,
                     fontWeight: 600,
                     borderBottomRightRadius: '8px',
-                    zIndex: 1,
+                    zIndex: 2,
                 }}
             >
                 {country}
@@ -41,27 +52,41 @@ const CountryCard: React.FC<CountryCardProps> = ({ image, country, tourCount }) 
             <Box
                 sx={{
                     position: 'absolute',
-                    bottom: 16,
-                    right: 16,
-                    backgroundColor: '#ea6a2b',
+                    bottom: 0,
+                    right: 0,
+                    backgroundColor: MuiColor.Orange,
                     color: 'white',
                     px: 2,
                     py: 0.5,
                     fontWeight: 600,
-                    borderRadius: '20px',
-                    zIndex: 1,
+                    borderTopLeftRadius: 8,
+                    zIndex: 2,
                 }}
             >
-                {tourCount} Tours
+                {tourCount} Destination
             </Box>
+
+            {/* Skeleton Loader */}
+            {!loaded && (
+                <Skeleton
+                    variant="rectangular"
+                    width="100%"
+                    height={200}
+                    animation="wave"
+                />
+            )}
 
             {/* Image */}
             <CardMedia
                 component="img"
-                height="100%"
+                height="200"
                 image={image}
                 alt={country}
-                sx={{ objectFit: 'cover' }}
+                sx={{
+                    objectFit: 'cover',
+                    display: loaded ? 'block' : 'none',
+                }}
+                onLoad={() => setLoaded(true)}
             />
         </Card>
     );

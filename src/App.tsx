@@ -9,6 +9,7 @@ import Blog from "./pages/Blog";
 import Footer from "./component/Footer";
 import Transportation from "./pages/Tranportation";
 import Hotel from "./pages/Hotel";
+import Destination from "./pages/Destination";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
               <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/about" element={<About />} />
+                  <Route path="/destination/:id" element={<Destination />} />
                   <Route path="/transportation" element={<Transportation />} />
                   <Route path="/hotel" element={<Hotel />} />
                   <Route path="/blog" element={<Blog />} />

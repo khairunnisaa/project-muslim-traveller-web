@@ -24,7 +24,7 @@ const DestinationCard = () => (
 
             <Grid mt={5} container spacing={2}>
                 <Grid size={{xs:12, md:4, sm:3}}>
-                    <CountryCard image={services1} country="Philippines" tourCount={8} />
+                    {/*<CountryCard onDestinationClick={1} image={services1} country="Philippines" tourCount={8} />*/}
                 </Grid>
             </Grid>
         </Container>
