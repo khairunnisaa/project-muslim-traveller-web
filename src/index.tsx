@@ -6,14 +6,13 @@ import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
-import { BrowserRouter } from "react-router-dom";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 // @ts-ignore
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-    <BrowserRouter basename="/project-muslim-traveller-web">
+    <React.StrictMode>
         <App />
-    </BrowserRouter>
+    </React.StrictMode>
 );
