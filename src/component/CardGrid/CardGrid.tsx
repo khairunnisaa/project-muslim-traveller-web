@@ -11,8 +11,8 @@ import CardActions from "@mui/material/CardActions";
 import CardMedia from "@mui/material/CardMedia";
 import Divider from "@mui/material/Divider";
 import moment from "moment";
-
 import "./CardGrid.css";
+
 
 export default function CardGrid(props:any) {
     const { auction = {} } = props;
@@ -24,7 +24,7 @@ export default function CardGrid(props:any) {
                     auction?.auctionData?.type === "live" ? "ribbonRed" : "ribbonBlue"
                 }`}
             >
-                <span>{auction.auctionData?.type.toUpperCase()}</span>
+                <span>{auction.auctionData?.type.toUpperCase()}RM 700</span>
             </div>
             <Card className="card" elevation={1} square={false}>
                 <CardHeader
@@ -65,8 +65,8 @@ export default function CardGrid(props:any) {
                     <CardMedia
                         className="media"
                         title="Auction cover image"
-                        // image={auction?.signedImageUrl ?? `/no-image.jpg`}
-                        image="https://picsum.photos/536/354"
+                        image={auction?.signedImageUrl ?? `/no-image.jpg`}
+                        // image="https://picsum.photos/536/354"
                     />
                     <Grid size={{sm:10}}
                         container

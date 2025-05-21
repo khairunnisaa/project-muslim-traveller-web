@@ -1,69 +1,70 @@
 import React from 'react';
-import {Box, Button, Card, CardActionArea, CardContent, CardMedia, Container, Grid, Typography} from "@mui/material";
-import services1 from "../../assets/image/services-1.jpg";
-import services2 from "../../assets/image/services-2.jpg";
-import services3 from "../../assets/image/services-3.jpg";
-import services4 from "../../assets/image/services-4.jpg";
-import {MuiColor} from "../../styles/enum";
+import {
+    Box,
+    Container,
+    Grid,
+    Typography
+} from "@mui/material";
+import { MuiColor } from "../../styles/enum";
+import image from "../../assets/image/serawak.png";
 
 const About = () => (
-    <Box my={20}>
-        <Container>
-            <Grid container spacing={2}>
-                <Grid size={{xs:12, md:7}} container>
-                    {[services1, services2, services3, services4].map((img, index) => (
-                        <Grid size={{xs:12, md:6}} key={index}>
-                            <Card>
-                                <CardActionArea>
-                                    <CardMedia
-                                        component="img"
-                                        height="140"
-                                        image={img}
-                                        alt={`service-${index}`}
-                                    />
-                                    <CardContent sx={{ height: 140 }}>
-                                        <Typography gutterBottom variant="h5">
-                                            {['Activities', 'Travel Arrangements', 'Private Guide', 'Location Manager'][index]}
-                                        </Typography>
-                                        <Typography variant="body2" color="text.secondary">
-                                            A small river named Duden flows by their place and supplies it with the necessary
-                                        </Typography>
-                                    </CardContent>
-                                </CardActionArea>
-                            </Card>
-                        </Grid>
-                    ))}
-                </Grid>
-
-                <Grid size={{xs:12, md:5}}>
+    <Container sx={{ my: 20 }}>
+        <Box
+            sx={{
+                backgroundColor: 'rgba(0, 0, 0, 0.05)', // transparansi tanpa mempengaruhi konten
+                color: 'white',
+                padding: '20px',
+                borderRadius: '10px',
+                position: 'relative',
+                zIndex: 1,
+            }}
+        >
+            <Grid container spacing={4} alignItems="center">
+                <Grid size={{xs:12, md:6}}>
                     <Typography sx={{
                         fontSize: { xs: 25, md: 30 },
                         color: MuiColor.Orange,
                         fontWeight: 700,
                         fontFamily: "Arizonia, cursive",
                     }}>
-                        Welcome to Muslim Traveller
+                        About Me
                     </Typography>
 
-                    <Typography variant="h1" sx={{
-                        fontSize: { xs: 30, md: 50 },
-                        lineHeight: 1.2,
-                        fontWeight: 700,
-                    }}>
-                        It's time to start your adventure
+                    <Typography variant="body1" color="text.secondary" sx={{ mt: 2 }}>
+                        <strong>MyMUslimTours</strong> is committed to introducing Malaysia as a top destination for Muslim
+                        travellers worldwide. We offer complete halal travel packages, blending natural beauty, cultural richness,
+                        and prayer-friendly convenience all in one unforgettable journey.
                     </Typography>
 
-                    <Typography variant="body1" sx={{ fontSize: 16 }}>
-                        A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
+                    <Typography variant="h5" color="text.secondary" sx={{ mt: 4 }}>
+                        What Makes Us Unique:
                     </Typography>
 
-                    <Button size="large" variant="contained" sx={{ bgcolor: MuiColor.Orange, mt: 5 }}>
-                        Search Destination
-                    </Button>
+                    <Box component="ul" sx={{ pl: 3, mt: 1, color: 'text.secondary' }}>
+                        <li>100% halal-focused tours</li>
+                        <li>Local Muslim tour guides</li>
+                        <li>Transparent pricing — no tourist overcharging</li>
+                        <li>Customizable packages with Arabic/Malay-speaking support</li>
+                        <li>Support for prayer times, halal meals, and Islamic values</li>
+                    </Box>
+                </Grid>
+
+                <Grid size={{xs:12, md:6}}>
+                    <Box
+                        sx={{
+                            backgroundImage: `url(${image})`,
+                            backgroundSize: "cover",
+                            backgroundPosition: "center",
+                            borderRadius: '10px',
+                            width: '100%',
+                            height: '50vh',
+                        }}
+                    />
                 </Grid>
             </Grid>
-        </Container>
-    </Box>
+        </Box>
+    </Container>
 );
 
 export default About;

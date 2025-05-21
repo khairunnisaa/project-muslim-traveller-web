@@ -8,7 +8,6 @@ import {
 } from "@mui/material";
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import { MuiColor } from '../styles/enum';
-
 const videoFile = `${process.env.PUBLIC_URL}/video/visit_malaysia.mp4`;
 
 const Hero = () => {
@@ -71,18 +70,18 @@ const Hero = () => {
                                 fontFamily: "Arizonia, cursive",
                             }}
                         >
-                            Welcome to Muslim Traveller
+                            Welcome to My Muslim Tours
                         </Typography>
                         <Typography
                             variant="h1"
                             sx={{
-                                fontSize: { xs: 30, md: 70 },
+                                fontSize: { xs: 30, md: 50 },
                                 color: MuiColor.White,
                                 lineHeight: 1.2,
                                 fontWeight: 700,
                             }}
                         >
-                            Discover Your Favorite <br /> Place with Us
+                            Visit Malaysia <br /> A Muslim Country Tourism Destination
                         </Typography>
                         <Typography
                             variant="caption"
@@ -92,7 +91,8 @@ const Hero = () => {
                                 fontSize: "16px",
                             }}
                         >
-                            Travel to the any corner of the world, without going around in circles
+                          Experiace Malaysia: A Hidden Gem for Muslim Travelers. Explore vibrant cities pristine nature,
+                            and rich islamic <br/>herritage in a land where halal travel is the norm.
                         </Typography>
                     </Box>
 

@@ -11,7 +11,7 @@ const Logo:React.FC<LogoProps> = ({title, subtitle}) => {
     return (
     <Box sx={{ flexDirection: 'column-reverse', marginTop:{xs:2} }}>
         <Typography variant="h1" sx={{
-            fontSize: {xs: 14, md: 16},
+            fontSize: {xs: 14, md: 19},
             color: MuiColor.White,
             lineHeight: 0.1,
             fontWeight: 900,
@@ -20,6 +20,7 @@ const Logo:React.FC<LogoProps> = ({title, subtitle}) => {
         </Typography>
         <Typography variant="h1" sx={{
             fontSize: {xs: 24, md: 33},
+            marginLeft: 3,
             color: MuiColor.Orange,
             lineHeight: 1,
             fontWeight: 700,

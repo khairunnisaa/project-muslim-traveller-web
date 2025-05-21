@@ -144,7 +144,7 @@ const Navbar = () => {
                 <Stack direction="column" >
                     {/* Top toolbar with logo & menu */}
                     <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                        <Logo title={'Muslim'} subtitle={'Traveller'} />
+                        <Logo title={'MyMuslim'} subtitle={'Tours'} />
                         <Stack direction='column'>
                             {/* Desktop Menu */}
                             <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 2, justifyContent: 'flex-end' }}>
